@@ -28,6 +28,7 @@ body {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+    font-size: 20px;
     transition: color 0.3s ease;
   }
   
@@ -75,11 +76,6 @@ body {
   }
   
   /* About section styles */
-  .about {
-    padding: 50px 0;
-    background-color: #fff;
-  }
-  
   .container {
     max-width: 960px;
     margin: 0 auto;
