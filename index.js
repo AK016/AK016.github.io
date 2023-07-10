@@ -24,15 +24,32 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(scrollAnimation);
   }
   
-  // Navbar links smooth scroll
-  const navLinks = document.querySelectorAll('#nav-menu a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetSection = link.getAttribute('href');
-      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-    });
+  // Get all the navigation links
+const navLinks = document.querySelectorAll('#nav-menu a');
+
+// Add event listener to track scroll position
+window.addEventListener('scroll', function() {
+  const currentScroll = window.pageYOffset;
+
+  // Iterate through each section to determine the active section
+  document.querySelectorAll('section').forEach(section => {
+    const sectionTop = section.offsetTop - 70;
+    const sectionHeight = section.offsetHeight;
+
+    // Check if the current scroll position is within the bounds of the section
+    if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
+      // Remove the 'active' class from all navigation links
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Get the corresponding navigation link using the section ID
+      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+
+      // Add the 'active' class to the corresponding navigation link
+      targetNavLink.classList.add('active');
+    }
   });
+});
+
 
   
   const prevBtn = document.getElementById('prevBtn');
@@ -58,7 +75,8 @@ function scrollProjects(direction) {
     scrollPosition += scrollAmount;
     scrollPosition = Math.min(scrollPosition, maxScroll);
   }
-
   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
 }
+
+
 

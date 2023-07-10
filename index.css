@@ -4,165 +4,169 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-  }
-  
-  /* Navbar styles */
-  #nav-menu {
-    background-color: #333;
+}
+
+/* Navbar styles */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
     color: #fff;
-  }
-  
-  #nav-menu ul {
+    z-index: 1000;
+}
+
+#nav-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: flex-end;
-  }
-  
-  #nav-menu li {
+}
+
+#nav-menu li {
     padding: 10px;
-  }
-  
-  #nav-menu li a {
+}
+
+#nav-menu li a {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
     transition: color 0.3s ease;
-  }
-  
-  #nav-menu li a:hover {
-    color: cornflowerblue;
-  }
-  
-  /* Home section styles */
-  #home {
+}
+
+#nav-menu li a:hover {
+    color: red;
+}
+
+/* Home section styles */
+#home {
     text-align: center;
     padding: 50px 0;
     background-color: #f9f9f9;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 15px;
-  }
-  
-  .profile {
+}
+
+.profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .home-img {
+}
+
+.home-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #user-detail-name {
+}
+
+#user-detail-name {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  #user-detail-intro {
+}
+
+#user-detail-intro {
     font-size: 18px;
     color: #666;
-  }
-  
-  /* About section styles */
-  .container {
+}
+
+/* About section styles */
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 15px;
-  }
-  
-  .about-content {
+}
+
+.about-content {
     text-align: center;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .about-description {
+}
+
+.about-description {
     font-size: 18px;
     color: #666;
     line-height: 1.5;
-  }
-  
-  /* Skills section styles */
-  #skills {
+}
+
+/* Skills section styles */
+#skills {
     padding: 50px 0;
     background-color: #f9f9f9;
-  }
-  
-  .skills-card-container {
+}
+
+.skills-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-  }
-  
-  .skills-card {
+}
+
+.skills-card {
     text-align: center;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     width: 250px;
-  }
-  
-  .skills-card-img {
+}
+
+.skills-card-img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
-  }
-  
-  .skills-card-name {
+}
+
+.skills-card-name {
     font-weight: bold;
     text-align: center;
-  }
-  
-  /* Projects section styles */
-  /* Projects section styles */
+}
+
+/* Projects section styles */
 #projects {
     padding: 50px 0;
     background-color: #fff;
-  }
-  
-  .project-carousel {
+}
+
+.project-carousel {
     overflow: hidden;
     position: relative;
-  }
-  
-  .project-card-container {
+}
+
+.project-card-container {
     display: flex;
     transition: transform 0.5s ease;
-  }
-  
-  .project-card {
+}
+
+.project-card {
     flex: 0 0 300px;
     padding: 20px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-right: 20px;
-  }
-  
-  .project-controls {
+}
+
+.project-controls {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-  }
-  
-  .project-control-btn {
+}
+
+.project-control-btn {
     background-color: #333;
     color: #fff;
     border: none;
@@ -171,68 +175,68 @@ body {
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .project-control-btn:hover {
+}
+
+.project-control-btn:hover {
     background-color: #555;
-  }
-  
-  /* Contact section styles */
-  #contact {
+}
+
+/* Contact section styles */
+#contact {
     text-align: center;
     padding: 50px 0;
     background-color: #f9f9f9;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 15px;
-  }
-  
-  .contact-list {
+}
+
+.contact-list {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  }
-  
-  .contact-list li {
+}
+
+.contact-list li {
     margin-right: 20px;
-  }
-  
-  .contact-list li:last-child {
+}
+
+.contact-list li:last-child {
     margin-right: 0;
-  }
-  
-  .contact-list li a {
+}
+
+.contact-list li a {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .contact-list li a:hover {
+}
+
+.contact-list li a:hover {
     color: #666;
-  }
-  
-  /* Resume section styles */
-  #resume {
+}
+
+/* Resume section styles */
+#resume {
     padding: 50px 0;
     background-color: #fff;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 15px;
-  }
-  
-  .resume-buttons {
+}
+
+.resume-buttons {
     text-align: center;
-  }
-  
-  .resume-button {
+}
+
+.resume-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #333;
@@ -240,43 +244,81 @@ body {
     text-decoration: none;
     margin-right: 10px;
     transition: background-color 0.3s ease;
-  }
-  
-  .resume-button:hover {
+}
+
+.resume-button:hover {
     background-color: #555;
-  }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
+}
+
+#nav-menu .active {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
     .skills-card-container {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .skills-card {
-      width: 100%;
+        width: 100%;
     }
-  
+
     .project-card-container {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
+
     .project-card-container {
         flex-wrap: wrap;
-      }
-    
-      .project-card {
+    }
+
+    .project-card {
         margin-right: 0;
         margin-bottom: 20px;
-      }
-  }
-  
-  @media screen and (max-width: 480px) {
+    }
+}
+
+@media screen and (max-width: 480px) {
     .section-title {
-      font-size: 28px;
+        font-size: 28px;
     }
-  
+
     .about-description {
-      font-size: 16px;
+        font-size: 16px;
     }
-  }
-  
+}
