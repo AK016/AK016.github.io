@@ -61,3 +61,11 @@ function scrollProjects(direction) {
 
   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
 }
+
+
+const resumeLink = document.querySelector('.nav-link.resume');
+
+resumeLink.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.open(this.href, '_blank', 'noopener');
+});
