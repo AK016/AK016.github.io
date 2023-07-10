@@ -33,4 +33,31 @@ function smoothScroll(target, duration) {
       smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
     });
   });
+
   
+  const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const projectContainer = document.querySelector('.project-card-container');
+
+let scrollPosition = 0;
+const projectWidth = 320; // Adjust this value to match the width of each project card
+const projectsToShow = 3; // Adjust this value to change the number of projects displayed at a time
+
+prevBtn.addEventListener('click', scrollProjects.bind(null, 'prev'));
+nextBtn.addEventListener('click', scrollProjects.bind(null, 'next'));
+
+function scrollProjects(direction) {
+  const containerWidth = projectContainer.offsetWidth;
+  const scrollAmount = projectWidth * projectsToShow;
+  const maxScroll = projectContainer.scrollWidth - containerWidth;
+
+  if (direction === 'prev') {
+    scrollPosition -= scrollAmount;
+    scrollPosition = Math.max(scrollPosition, 0);
+  } else {
+    scrollPosition += scrollAmount;
+    scrollPosition = Math.min(scrollPosition, maxScroll);
+  }
+
+  projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
+}
