@@ -1,0 +1,289 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Navbar styles */
+  #nav-menu {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #nav-menu li {
+    padding: 10px;
+  }
+  
+  #nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  #nav-menu li a:hover {
+    color: cornflowerblue;
+  }
+  
+  /* Home section styles */
+  #home {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #user-detail-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #user-detail-intro {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  /* About section styles */
+  .about {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Skills section styles */
+  #skills {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .skills-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .skills-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 250px;
+  }
+  
+  .skills-card-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .skills-card-name {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Projects section styles */
+  #projects {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .project-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+  }
+  
+  .project-card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+  
+  .project-card-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .project-tech-stack {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #999;
+  }
+  
+  .project-github-link,
+  .project-deployed-link {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .project-github-link:hover,
+  .project-deployed-link:hover {
+    color: #666;
+  }
+  
+  /* Contact section styles */
+  #contact {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-list li {
+    margin-right: 20px;
+  }
+  
+  .contact-list li:last-child {
+    margin-right: 0;
+  }
+  
+  .contact-list li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-list li a:hover {
+    color: #666;
+  }
+  
+  /* Resume section styles */
+  #resume {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .resume-buttons {
+    text-align: center;
+  }
+  
+  .resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-button:hover {
+    background-color: #555;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .skills-card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skills-card {
+      width: 100%;
+    }
+  
+    .project-card-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .section-title {
+      font-size: 28px;
+    }
+  
+    .about-description {
+      font-size: 16px;
+    }
+  }
+  
