@@ -257,6 +257,48 @@ body {
 
 
 
+/* cursor for title  */
+.cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    background-color: black;
+    vertical-align: text-bottom;
+    animation: cursor-blink 1s infinite;
+  }
+  
+  @keyframes cursor-blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
+  #job-title{
+    color: red;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
