@@ -52,7 +52,7 @@ window.addEventListener('scroll', function() {
 
 
   
-  const prevBtn = document.getElementById('prevBtn');
+const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const projectContainer = document.querySelector('.project-card-container');
 
