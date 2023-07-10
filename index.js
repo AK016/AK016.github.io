@@ -1,4 +1,5 @@
 // Smooth scroll to section
+const navLinks = document.querySelectorAll('#nav-menu a');
 function smoothScroll(target, duration) {
   const targetSection = document.querySelector(target);
   const targetPosition = targetSection.getBoundingClientRect().top;
@@ -49,6 +50,18 @@ window.addEventListener('scroll', function() {
     }
   });
 });
+
+
+ 
+  // Navbar links smooth scroll
+  // navLinks.forEach(link => {
+  //   link.addEventListener('click', e => {
+  //     e.preventDefault();
+  //     const targetSection = link.getAttribute('href');
+  //     smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
+  //   });
+  // });
+
 
 
   
