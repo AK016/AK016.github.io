@@ -38,7 +38,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have any questions or feedback, feel free to reach out to me:
 
-- Email: yourname@example.com
+- Email: akshaykadam9010.com
 - LinkedIn: https://www.linkedin.com/in/akshay-kadam-8444b81ab/
 - Phone: +91 9686315358
 
