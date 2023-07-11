@@ -26,7 +26,7 @@ window.addEventListener('scroll', function () {
 
 // Navbar links smooth scroll
 navLinks.forEach(link => {
-  if (!link.classList.contains('resume')) {
+  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
     link.addEventListener('click', e => {
       e.preventDefault();
       const targetSection = link.getAttribute('href');
@@ -36,12 +36,17 @@ navLinks.forEach(link => {
 });
 
 
+
 // Smooth scroll function
 function smoothScroll(target, duration) {
   const targetSection = document.querySelector(target);
   const targetPosition = targetSection.getBoundingClientRect().top;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
+  const navHeight = document.getElementById('nav-menu').offsetHeight; // Get the height of the navbar
+  let offset = navHeight + 10; // Adjust the offset to your preference
+
+
   let startTime = null;
 
   function scrollAnimation(currentTime) {
@@ -49,8 +54,16 @@ function smoothScroll(target, duration) {
     const timeElapsed = currentTime - startTime;
     const scrollY = ease(timeElapsed, startPosition, distance, duration);
     window.scrollTo(0, scrollY);
-    if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
+  
+    // Check if the scroll position is within the section bounds
+    if (timeElapsed < duration && Math.abs(scrollY - targetPosition) > 1) {
+      requestAnimationFrame(scrollAnimation);
+    } else {
+      // Scroll to the exact target position
+      window.scrollTo(0, targetPosition);
+    }
   }
+  
 
   function ease(t, b, c, d) {
     t /= d / 2;
@@ -66,31 +79,35 @@ function smoothScroll(target, duration) {
 
 
 
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const projectContainer = document.querySelector('.project-card-container');
 
-let scrollPosition = 0;
-const projectWidth = 320; // Adjust this value to match the width of each project card
-const projectsToShow = 3; // Adjust this value to change the number of projects displayed at a time
 
-prevBtn.addEventListener('click', scrollProjects.bind(null, 'prev'));
-nextBtn.addEventListener('click', scrollProjects.bind(null, 'next'));
 
-function scrollProjects(direction) {
-  const containerWidth = projectContainer.offsetWidth;
-  const scrollAmount = projectWidth * projectsToShow;
-  const maxScroll = projectContainer.scrollWidth - containerWidth;
 
-  if (direction === 'prev') {
-    scrollPosition -= scrollAmount;
-    scrollPosition = Math.max(scrollPosition, 0);
-  } else {
-    scrollPosition += scrollAmount;
-    scrollPosition = Math.min(scrollPosition, maxScroll);
-  }
-  projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
-}
+// const prevBtn = document.getElementById('prevBtn');
+// const nextBtn = document.getElementById('nextBtn');
+// const projectContainer = document.querySelector('.project-card-container');
+
+// let scrollPosition = 0;
+// const projectWidth = 320; // Adjust this value to match the width of each project card
+// const projectsToShow = 3; // Adjust this value to change the number of projects displayed at a time
+
+// prevBtn.addEventListener('click', scrollProjects.bind(null, 'prev'));
+// nextBtn.addEventListener('click', scrollProjects.bind(null, 'next'));
+
+// function scrollProjects(direction) {
+//   const containerWidth = projectContainer.offsetWidth;
+//   const scrollAmount = projectWidth * projectsToShow;
+//   const maxScroll = projectContainer.scrollWidth - containerWidth;
+
+//   if (direction === 'prev') {
+//     scrollPosition -= scrollAmount;
+//     scrollPosition = Math.max(scrollPosition, 0);
+//   } else {
+//     scrollPosition += scrollAmount;
+//     scrollPosition = Math.min(scrollPosition, maxScroll);
+//   }
+//   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
+// }
 
 const jobTitleElement = document.getElementById('job-title');
 const cursorElement = document.createElement('span');
@@ -154,19 +171,73 @@ window.addEventListener('load', function () {
 
 
 
+const projectCards = document.querySelectorAll(".project-card");
+
+function debounce(func, wait = 10, immediate = true) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+function checkSlide() {
+  projectCards.forEach((projectCard) => {
+    // Check if the project card is in the viewport
+    const slideInAt = (window.scrollY + window.innerHeight) - (projectCard.offsetHeight / 2);
+    const cardBottom = projectCard.offsetTop + projectCard.offsetHeight;
+    const isHalfShown = slideInAt > projectCard.offsetTop;
+    const isNotScrolledPast = window.scrollY < cardBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      projectCard.classList.add("active");
+    } else {
+      projectCard.classList.remove("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", debounce(checkSlide));
+
+// Run checkSlide initially to show the project cards in the initial viewport
+checkSlide();
 
 
+// Add the following JavaScript code
 
-// // skills div pop up
-// $(document).ready(function() {
-//   $(window).scroll(function() {
-//     var windowHeight = $(window).height();
-//     var scrollPosition = $(window).scrollTop();
-//     var skillsSectionPosition = $('#skills').offset().top;
+// Function to check if an element is in the viewport
+function isElementInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
-//     if (scrollPosition > skillsSectionPosition - windowHeight + 100) {
-//       $('#skills').addClass('skills-section-visible');
-//     }
-//   });
-// });
+// Function to handle the scroll event
+function handleScroll() {
+  var contactSection = document.getElementById('contact');
+  var contactLeft = document.querySelector('.contact-half.contact-left');
+  var contactRight = document.querySelector('.contact-half.contact-right');
+
+  if (isElementInViewport(contactSection)) {
+    contactLeft.classList.add('appear');
+    contactRight.classList.add('appear');
+  } else {
+    contactLeft.classList.remove('appear');
+    contactRight.classList.remove('appear');
+  }
+}
+
+// Event listener for scroll event
+window.addEventListener('scroll', handleScroll);
 

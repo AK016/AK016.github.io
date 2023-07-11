@@ -51,6 +51,12 @@ body {
     color: salmon;
 }
 
+#resume-button-1{
+  background-color: rgb(220, 20, 60);
+  padding: 10px 15px 10px 15px;
+  border-radius: 15px;
+}
+
   
   /* Sections styles */
   .container {
@@ -191,8 +197,9 @@ background-color: white;
   }
   
   .project-card-container {
-    display: flex;
-    transition: transform 0.5s ease;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
   
   .project-card {
@@ -393,3 +400,94 @@ background-color: white;
 
 
 
+/* Add the following CSS styles */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.contact-container a{
+  text-decoration: none;
+  font-size: 30px;
+  color: #EF4765;
+  margin-right: 30px;
+}
+
+.contact-half {
+  list-style: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 4s, transform 4s;
+}
+
+.contact-left {
+  transform-origin: left;
+  display: flex;
+}
+
+.contact-right {
+  transform-origin: right;
+  display: flex;
+}
+
+.contact-half.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+#projects {
+  padding: 50px 0;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+}
+
+.project-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translateY(100px);
+  transition: transform 1s, opacity 1s;
+  opacity: 0;
+}
+
+.project {
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.project-description {
+  margin-top: 10px;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2.8s, transform 2.8s;
+}
+
+.project-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
