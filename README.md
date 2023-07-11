@@ -39,6 +39,6 @@ This project is licensed under the [MIT License](LICENSE).
 If you have any questions or feedback, feel free to reach out to me:
 
 - Email: yourname@example.com
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- Phone: 123-456-7890
+- LinkedIn: https://www.linkedin.com/in/akshay-kadam-8444b81ab/
+- Phone: +91 9686315358
 
