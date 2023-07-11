@@ -145,3 +145,27 @@ function updateJobTitle() {
 updateJobTitle();
 
 
+// Add event listener for page load
+window.addEventListener('load', function() {
+  const logo = document.querySelector('.logo');
+  logo.classList.add('visible');
+});
+
+
+
+
+
+
+// // skills div pop up 
+// $(document).ready(function() {
+//   $(window).scroll(function() {
+//     var windowHeight = $(window).height();
+//     var scrollPosition = $(window).scrollTop();
+//     var skillsSectionPosition = $('#skills').offset().top;
+
+//     if (scrollPosition > skillsSectionPosition - windowHeight + 100) {
+//       $('#skills').addClass('skills-section-visible');
+//     }
+//   });
+// });
+

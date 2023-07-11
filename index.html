@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Portfolio</title>
+    <title>AK</title>
+    <link rel="shortcut icon" href="/images/image-removebg-preview.png" type="jpeg/png">
 </head>
 
 <body>
     <!-- Navbar -->
     <nav id="nav-menu">
         <ul>
+            <li class="logo"><a href="/index.html"><img src="/images/image.png" alt=""></a></li>
+        </ul>
+        <ul id="navoptions">
             <li><a href="#home" class="nav-link home">Home</a></li>
             <li><a href="#about" class="nav-link about">About</a></li>
             <li><a href="#skills" class="nav-link skills">Skills</a></li>
@@ -33,11 +37,11 @@
               </h2>
             </div>
             <div>
-              <img src="/Profile.jpg" alt="Your Photo" class="home-img">
+              <img src="/images/Profile.jpg" alt="Your Photo" class="home-img">
             </div>
           </div>
         </div>
-      </section>
+    </section>
       
       
 
@@ -56,7 +60,7 @@
             </div>
             <div class="resume-buttons">
                 <a class="resume-button" id="resume-button-2"
-                    href="https://drive.google.com/uc?id=1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH&export=download"target="_blank" download>Download Resume</a>
+                    href="https://drive.google.com/uc?id=1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH&export=download"target="_blank" download> <button class="button-62" role="button">Download Resume</button> </a>
             </div>
         </div>
     </section>
@@ -65,20 +69,63 @@
     <section id="skills">
         <div class="container">
             <div class="section-heading">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title">Technical Skills</h2>
             </div>
+            <h2>FRONTEND</h2>
             <div class="skills-card-container">
                 <div class="skills-card">
-                    <img src="skills-icon1.png" alt="Skill Icon" class="skills-card-img">
-                    <h3 class="skills-card-name">Skill 1</h3>
+                    <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">HTML</h3>
                 </div>
                 <div class="skills-card">
-                    <img src="skills-icon2.png" alt="Skill Icon" class="skills-card-img">
-                    <h3 class="skills-card-name">Skill 2</h3>
+                    <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">CSS</h3>
                 </div>
                 <div class="skills-card">
-                    <img src="skills-icon3.png" alt="Skill Icon" class="skills-card-img">
-                    <h3 class="skills-card-name">Skill 3</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">JAVASCRIPT</h3>
+                </div>
+            </div>
+            <h2>BACKEND</h2>
+            <div class="skills-card-container1">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">SPRING BOOT</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">JAVA</h3>
+                </div>
+            </div>
+            <h2>DATABASES</h2>
+            <div class="skills-card-container2">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">MYSQL</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">MONGO DB</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">Postgresql</h3>
+                </div>
+            </div>
+            <h2>TOOLS</h2>
+            <div class="skills-card-container3">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">GITHUB</h3>
                 </div>
             </div>
         </div>
@@ -186,7 +233,7 @@
             <ul class="contact-list">
                 <li><a href="https://github.com/AK016" id="contact-github">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/" id="contact-linkedin">LinkedIn</a></li>
-                <li><a href="#" id="contact-phone">Phone: +91 9686315358</a></li>
+                <li><a href="tel: +91 9686315358" id="contact-phone">Phone</a></li>
                 <li><a href="mailto:akshaykadam9010@gmail.com" id="contact-email">Email</a></li>
             </ul>
         </div>
@@ -201,7 +248,9 @@
 
 
     <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
+
 </body>
 
 </html>
