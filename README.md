@@ -1,7 +1,4 @@
-# Portfolio Website
-
-![Portfolio Screenshot](./screenshot.png)
-
+# Portfolio
 This repository contains the source code and assets for my personal portfolio website. The website showcases my skills, projects, and contact information.
 
 ## Live Demo
