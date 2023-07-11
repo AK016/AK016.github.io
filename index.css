@@ -157,12 +157,16 @@ body {
 .skills-card {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: gainsboro;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     width: 200px;
     height: 140px;
     border-radius: 5%;
+}
+
+.skills-card:hover{
+background-color: white;
 }
 
 .skills-card-img {
@@ -219,6 +223,17 @@ body {
   .project-control-btn:hover {
     background-color: #555;
   }
+
+  .github{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+    margin-left: 100px;
+  }
+
+
+
   
   #contact {
     text-align: center;

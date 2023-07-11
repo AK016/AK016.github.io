@@ -1,5 +1,42 @@
 // Smooth scroll to section
-const navLinks = document.querySelectorAll('#nav-menu a');
+const navLinks = document.querySelectorAll('#nav-menu a:not(.resume-link)');
+
+// Add event listener to track scroll position
+window.addEventListener('scroll', function () {
+  const currentScroll = window.pageYOffset;
+
+  // Iterate through each section to determine the active section
+  document.querySelectorAll('section').forEach(section => {
+    const sectionTop = section.offsetTop - 70;
+    const sectionHeight = section.offsetHeight;
+
+    // Check if the current scroll position is within the bounds of the section
+    if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
+      // Remove the 'active' class from all navigation links
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Get the corresponding navigation link using the section ID
+      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+
+      // Add the 'active' class to the corresponding navigation link
+      targetNavLink.classList.add('active');
+    }
+  });
+});
+
+// Navbar links smooth scroll
+navLinks.forEach(link => {
+  if (!link.classList.contains('resume')) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetSection = link.getAttribute('href');
+      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
+    });
+  }
+});
+
+
+// Smooth scroll function
 function smoothScroll(target, duration) {
   const targetSection = document.querySelector(target);
   const targetPosition = targetSection.getBoundingClientRect().top;
@@ -27,44 +64,8 @@ function smoothScroll(target, duration) {
 
 
 
-  
-// Add event listener to track scroll position
-window.addEventListener('scroll', function() {
-  const currentScroll = window.pageYOffset;
-
-  // Iterate through each section to determine the active section
-  document.querySelectorAll('section').forEach(section => {
-    const sectionTop = section.offsetTop - 70;
-    const sectionHeight = section.offsetHeight;
-
-    // Check if the current scroll position is within the bounds of the section
-    if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
-      // Remove the 'active' class from all navigation links
-      navLinks.forEach(link => link.classList.remove('active'));
-
-      // Get the corresponding navigation link using the section ID
-      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
-
-      // Add the 'active' class to the corresponding navigation link
-      targetNavLink.classList.add('active');
-    }
-  });
-});
 
 
- 
-  // Navbar links smooth scroll
-  // navLinks.forEach(link => {
-  //   link.addEventListener('click', e => {
-  //     e.preventDefault();
-  //     const targetSection = link.getAttribute('href');
-  //     smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-  //   });
-  // });
-
-
-
-  
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const projectContainer = document.querySelector('.project-card-container');
@@ -146,7 +147,7 @@ updateJobTitle();
 
 
 // Add event listener for page load
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const logo = document.querySelector('.logo');
   logo.classList.add('visible');
 });
@@ -156,7 +157,7 @@ window.addEventListener('load', function() {
 
 
 
-// // skills div pop up 
+// // skills div pop up
 // $(document).ready(function() {
 //   $(window).scroll(function() {
 //     var windowHeight = $(window).height();
