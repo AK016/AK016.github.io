@@ -588,11 +588,12 @@ body {
 }
 
 .emptyspace {
-  min-height: 200px;
+  min-height: 100px;
 }
 
 .rights {
   text-align: center;
+  margin-top: 150px;
 }
 
 

@@ -21,8 +21,24 @@ window.addEventListener('scroll', function () {
       // Add the 'active' class to the corresponding navigation link
       targetNavLink.classList.add('active');
     }
+
+    // Special case for the contact section
+    if (
+      currentScroll + window.innerHeight >= document.documentElement.scrollHeight &&
+      section.id === 'contact'
+    ) {
+      // Remove the 'active' class from all navigation links
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Get the corresponding navigation link using the section ID
+      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+
+      // Add the 'active' class to the corresponding navigation link
+      targetNavLink.classList.add('active');
+    }
   });
 });
+
 
 // Navbar links smooth scroll
 navLinks.forEach(link => {
@@ -43,10 +59,6 @@ function smoothScroll(target, duration) {
   const targetPosition = targetSection.getBoundingClientRect().top;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
-  const navHeight = document.getElementById('nav-menu').offsetHeight; // Get the height of the navbar
-  let offset = navHeight + 10; // Adjust the offset to your preference
-
-
   let startTime = null;
 
   function scrollAnimation(currentTime) {
@@ -54,16 +66,8 @@ function smoothScroll(target, duration) {
     const timeElapsed = currentTime - startTime;
     const scrollY = ease(timeElapsed, startPosition, distance, duration);
     window.scrollTo(0, scrollY);
-  
-    // Check if the scroll position is within the section bounds
-    if (timeElapsed < duration && Math.abs(scrollY - targetPosition) > 1) {
-      requestAnimationFrame(scrollAnimation);
-    } else {
-      // Scroll to the exact target position
-      window.scrollTo(0, targetPosition);
-    }
+    if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
   }
-  
 
   function ease(t, b, c, d) {
     t /= d / 2;
@@ -74,6 +78,16 @@ function smoothScroll(target, duration) {
 
   requestAnimationFrame(scrollAnimation);
 }
+
+// Navbar links smooth scroll
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetSection = link.getAttribute('href');
+    smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
+  });
+});
+
 
 
 
