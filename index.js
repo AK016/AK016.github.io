@@ -40,19 +40,6 @@ window.addEventListener('scroll', function () {
 });
 
 
-// Navbar links smooth scroll
-navLinks.forEach(link => {
-  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetSection = link.getAttribute('href');
-      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-    });
-  }
-});
-
-
-
 // Smooth scroll function
 function smoothScroll(target, duration) {
   const targetSection = document.querySelector(target);
@@ -81,15 +68,14 @@ function smoothScroll(target, duration) {
 
 // Navbar links smooth scroll
 navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetSection = link.getAttribute('href');
-    smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-  });
+  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetSection = link.getAttribute('href');
+      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
+    });
+  }
 });
-
-
-
 
 
 
@@ -253,7 +239,13 @@ function disableDarkMode() {
 
 // Check if dark mode was previously enabled
 const darkModeEnabled = localStorage.getItem('darkModeEnabled');
-
 if (darkModeEnabled && darkModeEnabled === 'true') {
+  darkModeToggle.checked = true; // Set the checkbox state to checked
   enableDarkMode();
+} 
+else {
+  darkModeToggle.checked = false; // Set the checkbox state to unchecked
+  disableDarkMode();
 }
+
+

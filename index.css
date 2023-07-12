@@ -169,7 +169,7 @@ body {
 
 #skills h2 {
   text-align: center;
-  color: #fa8072
+  color: rgb(220, 20, 60);
 }
 
 .skills-card-container {
@@ -574,6 +574,10 @@ body {
   transform: translateY(50px);
   transition: opacity 3.8s, transform 3.8s;
 }
+.project-deployed-link{
+  /* text-decoration: none; */
+  color: brown;
+}
 
 
 .project-card.active {
@@ -690,8 +694,9 @@ body.dark-mode {
   color: rgb(220, 20, 60);
 }
 
-.dark-mode .fa {
-  color: #fff;
+.dark-mode #github-home {
+  color: #ffffff; /* Color for dark mode */
+
 }
 
 .dark-mode .section-title {
