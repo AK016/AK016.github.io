@@ -20,6 +20,7 @@ Check out the live version of my portfolio website: [https://ak016.github.io/](h
 - CSS3
 - JavaScript
 - jQuery
+- Bootstrap
 
 ## Usage
 
