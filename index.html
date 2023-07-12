@@ -13,7 +13,12 @@
     <!-- Navbar -->
     <nav id="nav-menu">
         <ul>
-            <li class="logo"><a href="#"><img src="/images/image.png" alt=""></a></li>
+            <li class="logo"><a href="#"><img src="/images/image-removebg-preview.png" alt=""></a></li>
+            <!-- dark mode toggle  -->
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
         </ul>
         <ul id="navoptions">
             <li><a href="#home" class="nav-link home">Home</a></li>
@@ -38,10 +43,13 @@
                         <span id="job-title"></span>
                     </h2>
                     <a class="nav-link resume"
-                    href="https://drive.google.com/file/d/1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH/view?usp=sharing" id="resume-1">Resume</a>
+                        href="https://drive.google.com/file/d/1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH/view?usp=sharing"
+                        id="resume-1">Resume</a>
                     <div class="social">
-                        <a href="https://github.com/AK016"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                        <a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/"><i class="fa-brands fa-linkedin" style="color: #4783eb;"></i></a>
+                        <a href="https://github.com/AK016"><i class="fa-brands fa-github"
+                                style="color: #000000;"></i></a>
+                        <a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/"><i class="fa-brands fa-linkedin"
+                                style="color: #4783eb;"></i></a>
                     </div>
                 </div>
                 <div>
@@ -57,14 +65,13 @@
             <div class="about-content">
                 <h2 class="section-title">About</h2>
                 <p class="about-description" id="user-detail-intro">Highly skilled and motivated Java Backend Developer
-                    with a solid foundation
-                    in HTML, CSS, Javascript, Java, Spring Boot, React, and Maven. Possessing acomprehensive understanding of web development
+                    with a solid foundation in Java, Spring Boot, React, and Maven. Possessing acomprehensive
+                    understanding of web development
                     principles, gained through successful completion of a rigorous training program at Masai School.
                     Demonstrates a strong ability to collaborate effectively in team environments, communicate complex
                     ideas clearly, and deliver high-quality code solutions. Committed to continuous learning,embracing
                     new technologies, and contributing to the success of projects through meticulous attention to detail
                     and a proactive approach.</p>
-<!--                 <p id="user-detail-intro"></p> -->
             </div>
             <div class="resume-buttons">
                 <a class="resume-button" id="resume-button-2"
@@ -124,8 +131,8 @@
                     <h3 class="skills-card-name">MONGO DB</h3>
                 </div>
                 <div class="skills-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Apache_Maven_logo.svg/1280px-Apache_Maven_logo.svg.png" alt="Skill Icon"
-                        class="skills-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Apache_Maven_logo.svg/1280px-Apache_Maven_logo.svg.png"
+                        alt="Skill Icon" class="skills-card-img">
                     <h3 class="skills-card-name">MAVEN</h3>
                 </div>
             </div>
@@ -143,73 +150,99 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-          <h2 class="section-title">Projects</h2>
-          <div class="project-card-container">
-            <div class="project-card" data-index="0">
-              <!-- Project 1 content -->
-              <img class="project-image" src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg" alt="">
-              <h2 class="project-title">NewsSphere</h2>
-              <p class="project-description">NewsSphere is a simple news management system implemented in Java. It allows administrators, journalists, and readers to perform various actions related to news articles.</p>
-              <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
-              <div class="deployed-links">
-                <a href="https://github.com/AK016/burly-argument-2312" class="project-github-link"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye" style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
-              </div>
-              <!-- <a href="#" class="project-video-link">Netlify</a> -->
+            <h2 class="section-title">Projects</h2>
+            <div class="project-card-container">
+                <div class="project-card" data-index="0">
+                    <!-- Project 1 content -->
+                    <img class="project-image"
+                        src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg"
+                        alt="">
+                    <h2 class="project-title">NewsSphere</h2>
+                    <p class="project-description">NewsSphere is a simple news management system implemented in Java. It
+                        allows administrators, journalists, and readers to perform various actions related to news
+                        articles.</p>
+                    <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
+                    <div class="deployed-links">
+                        <a href="https://github.com/AK016/burly-argument-2312" class="project-github-link"><i
+                                class="fa-brands fa-github" style="color: #000000;"></i></a>
+                        <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye"
+                                style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
+                    </div>
+                    <!-- <a href="#" class="project-video-link">Netlify</a> -->
+                </div>
+                <div class="project-card" data-index="1">
+                    <!-- Project 2 content -->
+                    <img class="project-image" src="/images/travelo-snap.png" alt="">
+                    <h2 class="project-title">Travelo</h2>
+                    <p class="project-description">Travelo is a dynamic and innovative Travel Planner Website dedicated
+                        to crafting personalized travel itineraries and delivering seamless travel solutions for an
+                        unparalleled adventure..</p>
+                    <p class="project-tech-stack">Tech Stack: <span class="techs">HTML | CSS | JavaScript</span></p>
+                    <div class="deployed-links">
+                        <a href="https://github.com/AK016/grumpy-snakes-5789" class="project-github-link"><i
+                                class="fa-brands fa-github" style="color: #000000;"></i></a>
+                        <a href="https://travelowithus.netlify.app/index.html" class="project-deployed-link"><i
+                                class="fa-duotone fa-eye"
+                                style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
+                    </div>
+                    <!-- <a href="#" class="project-video-link">Netlify</a> -->
+                </div>
+                <div class="project-card" data-index="2">
+                    <!-- Project 3 content -->
+                    <img class="project-image" src="/images/mauve.png" alt="">
+                    <h2 class="project-title">Mauve</h2>
+                    <p class="project-description">Mauve is a captivating e-commerce clone of purplle.com, offering a
+                        wide array of beauty and wellness products. Shop effortlessly, explore trending brands, and
+                        enjoy reliable delivery services for all your beauty desires..</p>
+                    <p class="project-tech-stack">Tech Stack: <span class="techs">HTML | CSS | JavaScript</span></p>
+                    <div class="deployed-links">
+                        <a href="https://github.com/AK016/Mauve" class="project-github-link"><i
+                                class="fa-brands fa-github" style="color: #000000;"></i></a>
+                        <a href="https://mauvebeauty.netlify.app/index.html" class="project-deployed-link"><i
+                                class="fa-duotone fa-eye"
+                                style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
+                    </div>
+                    <!-- <a href="#" class="project-video-link">Netlify</a> -->
+                </div>
+                <div class="project-card" data-index="3">
+                    <!-- Project 4 content -->
+                    <img class="project-image"
+                        src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg"
+                        alt="">
+                    <h2 class="project-title">NewsSphere</h2>
+                    <p class="project-description">NewsSphere is a simple news management system implemented in Java. It
+                        allows administrators, journalists, and readers to perform various actions related to news
+                        articles.</p>
+                    <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
+                    <div class="deployed-links">
+                        <a href="" class="project-github-link"><i class="fa-brands fa-github"
+                                style="color: #000000;"></i></a>
+                        <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye"
+                                style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
+                    </div>
+                    <!-- <a href="#" class="project-video-link">Netlify</a> -->
+                </div>
+                <div class="project-card" data-index="4">
+                    <!-- Project 5 content -->
+                    <img class="project-image"
+                        src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg"
+                        alt="">
+                    <h2 class="project-title">NewsSphere</h2>
+                    <p class="project-description">NewsSphere is a simple news management system implemented in Java. It
+                        allows administrators, journalists, and readers to perform various actions related to news
+                        articles.</p>
+                    <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
+                    <div class="deployed-links">
+                        <a href="" class="project-github-link"><i class="fa-brands fa-github"
+                                style="color: #000000;"></i></a>
+                        <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye"
+                                style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
+                    </div>
+                    <!-- <a href="#" class="project-video-link">Netlify</a> -->
+                </div>
             </div>
-            <div class="project-card" data-index="1">
-                <!-- Project 2 content -->
-                <img class="project-image" src="/images/travelo-snap.png" alt="">
-                <h2 class="project-title">Travelo</h2>
-                <p class="project-description">Travelo is a dynamic and innovative Travel Planner Website dedicated to crafting personalized travel itineraries and delivering seamless travel solutions for an unparalleled adventure..</p>
-                <p class="project-tech-stack">Tech Stack: <span class="techs">HTML | CSS | JavaScript</span></p>
-                <div class="deployed-links">
-                  <a href="https://github.com/AK016/grumpy-snakes-5789" class="project-github-link"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                  <a href="https://travelowithus.netlify.app/index.html" class="project-deployed-link"><i class="fa-duotone fa-eye" style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
-                </div>
-                <!-- <a href="#" class="project-video-link">Netlify</a> -->
-              </div>
-              <div class="project-card" data-index="2">
-                <!-- Project 3 content -->
-                <img class="project-image" src="/images/mauve.png" alt="">
-                <h2 class="project-title">Mauve</h2>
-                <p class="project-description">Mauve is a captivating e-commerce clone of purplle.com, offering a wide array of beauty and wellness products. Shop effortlessly, explore trending brands, and enjoy reliable delivery services for all your beauty desires..</p>
-                <p class="project-tech-stack">Tech Stack: <span class="techs">HTML | CSS | JavaScript</span></p>
-                <div class="deployed-links">
-                  <a href="https://github.com/AK016/Mauve" class="project-github-link"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                  <a href="https://mauvebeauty.netlify.app/index.html" class="project-deployed-link"><i class="fa-duotone fa-eye" style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
-                </div>
-                <!-- <a href="#" class="project-video-link">Netlify</a> -->
-              </div>
-              <div class="project-card" data-index="3">
-                <!-- Project 4 content -->
-                <img class="project-image" src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg" alt="">
-                <h2 class="project-title">NewsSphere</h2>
-                <p class="project-description">NewsSphere is a simple news management system implemented in Java. It allows administrators, journalists, and readers to perform various actions related to news articles.</p>
-                <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
-                <div class="deployed-links">
-                  <a href="" class="project-github-link"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                  <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye" style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
-                </div>
-                <!-- <a href="#" class="project-video-link">Netlify</a> -->
-              </div>
-              <div class="project-card" data-index="4">
-                <!-- Project 5 content -->
-                <img class="project-image" src="https://thumbs.dreamstime.com/b/gazetowa-ikona-w-neonowym-stylu-jeden-dziennikarstwo-inkasowa-mo%C5%BCe-u%C5%BCywa%C4%87-dla-ui-ux-126560964.jpg" alt="">
-                <h2 class="project-title">NewsSphere</h2>
-                <p class="project-description">NewsSphere is a simple news management system implemented in Java. It allows administrators, journalists, and readers to perform various actions related to news articles.</p>
-                <p class="project-tech-stack">Tech Stack: <span class="techs">JAVA</span></p>
-                <div class="deployed-links">
-                  <a href="" class="project-github-link"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                  <a href="#" class="project-deployed-link"><i class="fa-duotone fa-eye" style="--fa-primary-color: #dc3c50; --fa-secondary-color: #000000;"></i></a>
-                </div>
-                <!-- <a href="#" class="project-video-link">Netlify</a> -->
-              </div>
-          </div>
         </div>
-      </section>
-      
-
+    </section>
 
     <!-- gitHub streak stats -->
     <div class="github">
@@ -223,6 +256,14 @@
             </div>
         </div>
 
+        <div>
+            <div class="container">
+                <a class="react-activity-calendar" href="https://github.com/AK016/github-readme-stats">
+                    <img id="github-stats-card" src="https://github-readme-stats.vercel.app/api?username=AK016"
+                        alt="GitHub Stats Card" />
+                </a>
+            </div>
+        </div>
 
         <div>
             <div class="container">
@@ -233,35 +274,45 @@
                 </a>
             </div>
         </div>
-
-        <div>
-            <div class="container">
-                <a class="react-activity-calendar" href="https://github.com/AK016/github-readme-stats">
-                    <img id="github-stats-card" src="https://github-readme-stats.vercel.app/api?username=AK016"
-                        alt="GitHub Stats Card" />
-                </a>
-            </div>
-        </div>
     </div>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-          <div class="section-heading">
-            <h2 class="section-title">Contact</h2>
-          </div>
-          <div class="contact-container">
-            <ul class="contact-half contact-left">
-              <li><a href="https://github.com/AK016" id="contact-github">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/" id="contact-linkedin">LinkedIn</a></li>
-            </ul>
-            <ul class="contact-half contact-right">
-              <li><a href="tel: +91 9686315358" id="contact-phone">Phone</a></li>
-              <li><a href="mailto:akshaykadam9010@gmail.com" id="contact-email">Email</a></li>
-            </ul>
-          </div>
+            <div class="section-heading">
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-container">
+                <ul class="contact-half contact-left">
+                    <li><a href="https://github.com/AK016" id="contact-github">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/" id="contact-linkedin">LinkedIn</a>
+                    </li>
+                </ul>
+                <ul class="contact-half contact-right">
+                    <li><a href="tel: +91 9686315358" id="contact-phone">Phone</a></li>
+                    <li><a href="mailto:akshaykadam9010@gmail.com" id="contact-email">Email</a></li>
+                </ul>
+            </div>
         </div>
-      </section>
+    </section>
+
+    <div class="emptyspace"></div>
+
+    <h2 class="rights">Designed and developed by AKSHAY KADAM</h2>
+
+    <!-- <form method="POST" action="process_form.php">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form> -->
+
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
