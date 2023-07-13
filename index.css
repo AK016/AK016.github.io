@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
@@ -806,11 +806,11 @@ body.dark-mode {
   .skills-card-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    margin-left: 60px;
+    margin-left: 23px;
   }
   .skills-card{
-    width: 100px;
-    height: 70px;
+    width: 150px;
+    height: 130px;
   }
   #projects{
     width: 700px;
