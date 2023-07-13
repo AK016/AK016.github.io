@@ -738,7 +738,7 @@ body.dark-mode {
   .skills-card-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    margin-left: 25skipx;
+    margin-left: 25px;
   }
   .skills-card{
     width: 150px;
