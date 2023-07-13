@@ -173,31 +173,10 @@ body {
 }
 
 .skills-card-container {
-  display: flex;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: flex-start;
-}
-
-.skills-card-container1 {
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: center;
-}
-
-.skills-card-container2 {
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  margin: auto;
-  justify-content: center;
-}
-
-.skills-card-container3 {
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  margin: auto;
-  justify-content: center;
 }
 
 .skills-card {
@@ -607,8 +586,8 @@ body {
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
-  height: 40px;
+  width: 70px;
+  height: 30px;
   margin-top: 20px;
 }
 
@@ -626,7 +605,7 @@ body {
   background-position: center;
   cursor: pointer;
   background-color: #ccc;
-  border-radius: 34px;
+  border-radius: 32px;
   transition: background-color 0.5s ease;
 }
 
@@ -636,8 +615,8 @@ body {
   top: 50%;
   left: 6px;
   transform: translate(0, -50%);
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
   border-radius: 50%;
   transition: transform 0.7s ease;
@@ -653,8 +632,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background-image: url("https://e7.pngegg.com/pngimages/638/909/png-clipart-kakashi-hatake-sasuke-uchiha-obito-uchiha-sharingan-naruto-naruto-manga-logo.png");
   background-size: cover;
   background-position: center;
@@ -666,8 +645,8 @@ input[type="checkbox"]:checked+.slider {
 }
 
 input[type="checkbox"]:checked+.slider:before {
-  transform: translateX(10px);
-  transform: translateY(-16px);
+  transform: translateX(3px);
+  transform: translateY(-15px);
 }
 
 
