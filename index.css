@@ -169,7 +169,6 @@ body {
 
 #skills h2 {
   text-align: center;
-  color: rgb(220, 20, 60);
 }
 
 .skills-card-container {
@@ -188,6 +187,9 @@ body {
   width: 200px;
   height: 140px;
   border-radius: 5%;
+  opacity: 0; /* Initial opacity to hide the cards */
+  transform: translateX(50px); /* Initial position outside the viewport */
+  animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
 }
 
 .skills-card:hover {
@@ -204,6 +206,23 @@ body {
   font-weight: bold;
   text-align: center;
 }
+
+@keyframes slideInCard {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.skills-card {
+  animation-duration: 0.5s; /* Set the animation duration to match the delay */
+}
+
+.skills-card.animate {
+  animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
+}
+
+
 
 #projects {
   padding: 50px 0;
@@ -372,41 +391,6 @@ body {
 
 #job-title .cursor {
   display: inline;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .skills-card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .skills-card {
-    width: 100%;
-  }
-
-  .project-card-container {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card-container {
-    flex-wrap: wrap;
-  }
-
-  .project-card {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .section-title {
-    font-size: 28px;
-  }
-
-  .about-description {
-    font-size: 16px;
-  }
 }
 
 
@@ -615,8 +599,8 @@ body {
   top: 50%;
   left: 6px;
   transform: translate(0, -50%);
-  width: 30px;
-  height: 30px;
+  width: 31px;
+  height: 31px;
   background-color: #fff;
   border-radius: 50%;
   transition: transform 0.7s ease;
@@ -674,7 +658,7 @@ body.dark-mode {
 }
 
 .dark-mode #github-home {
-  color: #ffffff; /* Color for dark mode */
+  color: #ffffff; 
 
 }
 
@@ -718,4 +702,148 @@ body.dark-mode {
 
 .dark-mode #contact {
   background-color: rgb(30, 41, 59);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive styles */
+@media all and (min-width: 768px) and (max-width:1023px) {
+  .logo{
+    width: 30px;
+    height: 50px;
+  }
+  .switch{
+    margin-left: 60px;
+    width: 70px;
+    height: 25px;
+  }
+  #nav-menu li a{
+    font-size:19px;
+    margin-right: 0px;
+  }
+
+  .skills-card-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-left: 25skipx;
+  }
+  .skills-card{
+    width: 150px;
+    height: 130px;
+  }
+  .project-card-container{
+    display: grid;
+    margin-left: 10px;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .project-card{
+    width: 300px;
+  }
+  .github{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+  .github div:nth-child(2){
+    margin-left: 20px;
+  }
+  .github div:nth-child(3){
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+}
+@media all and (min-width: 320px) and (max-width:767px) {
+  .logo{
+    width: 30px;
+    height: 50px;
+  }
+  .switch{
+    margin-left: 580px;
+    width: 70px;
+    height: 30px;
+  }
+  .turnoff{
+    display: none;
+  }
+
+  .home-text{
+    min-width: 400px;
+    margin-left: 30px;
+  }
+  .home-img{
+    margin-left: 80px;
+  }
+  #about{
+    width: 700px;
+    margin-left: 30px;
+  }
+  .section-title{
+    text-align: center;
+  }
+
+  #skills{
+    width: 767px;
+  }
+  .skills-card-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-left: 60px;
+  }
+  .skills-card{
+    width: 100px;
+    height: 70px;
+  }
+  #projects{
+    width: 700px;
+  }
+  .project-card-container{
+    display: grid;
+    margin-left: 10px;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .project-card{
+    width: 300px;
+  }
+  .section-title{
+    width: 700px;
+    text-align: center;
+  }
+  .github{
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+  .github div:nth-child(1){
+    margin-left: 50px;
+  }
+  .github div:nth-child(2){
+    margin-left: 70px;
+  }
+  .github div:nth-child(3){
+    margin-left: 140px;
+    margin-top: 10px;
+  }
+  #contact{
+    width: 767px;
+  }
+  .emptyspace{
+    width: 750px;
+    text-align: center;
+  }
 }

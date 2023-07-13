@@ -141,6 +141,65 @@ window.addEventListener('load', function () {
 
 
 
+
+
+// Callback function when the skills section is intersecting
+function handleSkillsIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const cards = entry.target.querySelectorAll('.skills-card:not(.animate)'); // Select only the cards that are not already animated
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`; // Add a delay to each card's animation based on its index
+        card.classList.add('animate'); // Add class to trigger the animation
+      });
+      observer.unobserve(entry.target); // Stop observing once the animation is triggered for all cards
+    }
+  });
+}
+
+// Create an intersection observer
+const skillsObserver = new IntersectionObserver(handleSkillsIntersection, {
+  root: null,
+  threshold: 0.5 // Adjust the threshold as needed
+});
+
+// Select the skills section containers
+const skillsSections = document.querySelectorAll('#skills');
+
+// Observe each skills section container
+skillsSections.forEach(skillsSection => {
+  skillsObserver.observe(skillsSection);
+});
+
+// Helper function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function handleScroll() {
+  skillsSections.forEach(skillsSection => {
+    if (isInViewport(skillsSection)) {
+      skillsObserver.observe(skillsSection);
+    } else {
+      skillsObserver.unobserve(skillsSection);
+    }
+  });
+}
+
+// Attach the handleScroll function to the scroll event
+window.addEventListener('scroll', handleScroll());
+
+
+
+
+
+// project animation event 
 const projectCards = document.querySelectorAll(".project-card");
 
 function debounce(func, wait = 10, immediate = true) {

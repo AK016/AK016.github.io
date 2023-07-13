@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-APdDpJfjwODsLPsD7GryISjzo+o8bpflHzE4y04wmFgfd4R8wk7jjvFsOqXix+/f" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
     <title>Portfolio</title>
     <link rel="shortcut icon" href="/images/image-removebg-preview.png" type="jpeg/png">
 </head>
@@ -17,18 +15,18 @@
         <ul>
             <li class="logo"><a href="#"><img src="/images/image-removebg-preview.png" alt=""></a></li>
             <!-- dark mode toggle  -->
-            <label class="switch">
+            <label class="switch" title="Dark-Mode">
                 <input type="checkbox" id="dark-mode-toggle">
                 <span class="slider"></span>
             </label>
         </ul>
         <ul id="navoptions">
-            <li><a href="#home" class="nav-link home">Home</a></li>
-            <li><a href="#about" class="nav-link about">About</a></li>
-            <li><a href="#skills" class="nav-link skills">Skills</a></li>
-            <li><a href="#projects" class="nav-link projects">Projects</a></li>
-            <li><a href="#contact" class="nav-link contact">Contact</a></li>
-            <li><a class="nav-link resume"
+            <li><a href="#home" class="nav-link home turnoff">Home</a></li>
+            <li><a href="#about" class="nav-link about turnoff">About</a></li>
+            <li><a href="#skills" class="nav-link skills turnoff">Skills</a></li>
+            <li><a href="#projects" class="nav-link projects turnoff">Projects</a></li>
+            <li><a href="#contact" class="nav-link contact turnoff">Contact</a></li>
+            <li><a class="nav-link resume turnoff"
                     href="https://drive.google.com/uc?id=1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH&export=download"
                     target="_blank" download id="resume-button-1">Resume</a></li>
         </ul>
@@ -48,8 +46,8 @@
                         href="https://drive.google.com/file/d/1GSBfYILjPHQPw90A-Sg6PL3yvTgXdhhH/view?usp=sharing"
                         id="resume-1">Resume</a>
                     <div class="social">
-                        <a href="https://github.com/AK016"><i class="fa-brands fa-github" style="color: #6abde7;"></i></a>
-                        <a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/"><i class="fa-brands fa-linkedin"
+                        <a href="https://github.com/AK016" title="GitHub"><i class="fa-brands fa-github" style="color: #6abde7;"></i></a>
+                        <a href="https://www.linkedin.com/in/akshay-kadam-8444b81ab/" title="LinkedIn"><i class="fa-brands fa-linkedin"
                                 style="color: #4783eb;"></i></a>
                     </div>
                 </div>
@@ -242,6 +240,7 @@
     </section>
 
     <!-- gitHub streak stats -->
+    <h2 class="section-title" id="github-title">GitHub Stats</h2>  
     <div class="github">
         <div>
             <div class="container">
