@@ -772,13 +772,18 @@ body.dark-mode {
     height: 50px;
   }
   .switch{
-    margin-left: 580px;
+    margin-left: 80px;
     width: 70px;
     height: 30px;
   }
   .turnoff{
-    display: none;
+    /* display: none; */
   }
+  #nav-menu li a{
+    font-size:18px;
+    margin-right: 0px;
+  }
+  
 
   .home-text{
     min-width: 400px;
