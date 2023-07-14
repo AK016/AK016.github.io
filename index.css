@@ -499,7 +499,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transform: translateY(100px);
+  transform: translateY(1000px);
   transition: transform 1s, opacity 1s;
   opacity: 0;
 }
@@ -535,7 +535,7 @@ body {
 .project-card {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 3.8s, transform 3.8s;
+  transition: opacity 1s, transform 1s;
 }
 .project-deployed-link{
   /* text-decoration: none; */
