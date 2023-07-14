@@ -796,6 +796,9 @@ body.dark-mode {
     width: 700px;
     margin-left: 30px;
   }
+  #resume-button-2{
+    margin-left: 95%;
+  }
 
   #skills{
     width: 767px;
