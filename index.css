@@ -792,12 +792,9 @@ body.dark-mode {
   .home-img{
     margin-left: 80px;
   }
-  #about{
+  .about-description{
     width: 700px;
     margin-left: 30px;
-  }
-  .section-title{
-    text-align: center;
   }
 
   #skills{
@@ -824,7 +821,7 @@ body.dark-mode {
     width: 300px;
   }
   .section-title{
-    width: 700px;
+    width: 750px;
     text-align: center;
   }
   .github{
