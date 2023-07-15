@@ -84,7 +84,6 @@ const cursorElement = document.createElement('span');
 cursorElement.classList.add('cursor');
 cursorElement.textContent = '|';
 jobTitleElement.appendChild(cursorElement);
-
 const jobTitles = [
   'Full Stack Web Developer.',
   'Java Backend Developer.'
@@ -299,11 +298,11 @@ function disableDarkMode() {
 // Check if dark mode was previously enabled
 const darkModeEnabled = localStorage.getItem('darkModeEnabled');
 if (darkModeEnabled && darkModeEnabled === 'true') {
-  darkModeToggle.checked = true; // Set the checkbox state to checked
+  darkModeToggle.checked = true;
   enableDarkMode();
-} 
+}
 else {
-  darkModeToggle.checked = false; // Set the checkbox state to unchecked
+  darkModeToggle.checked = false;
   disableDarkMode();
 }
 
