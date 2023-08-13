@@ -1,10 +1,12 @@
 /* Global styles */
 body {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
 }
+
+
 
 /* Navbar styles */
 #nav-menu {
@@ -187,9 +189,12 @@ body {
   width: 200px;
   height: 140px;
   border-radius: 5%;
-  opacity: 0; /* Initial opacity to hide the cards */
-  transform: translateX(50px); /* Initial position outside the viewport */
-  animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
+  opacity: 0;
+  /* Initial opacity to hide the cards */
+  transform: translateX(50px);
+  /* Initial position outside the viewport */
+  animation: slideInCard 0.5s forwards;
+  /* Animation to slide in the card */
 }
 
 .skills-card:hover {
@@ -215,11 +220,13 @@ body {
 }
 
 .skills-card {
-  animation-duration: 0.5s; /* Set the animation duration to match the delay */
+  animation-duration: 0.5s;
+  /* Set the animation duration to match the delay */
 }
 
 .skills-card.animate {
-  animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
+  animation: slideInCard 0.5s forwards;
+  /* Animation to slide in the card */
 }
 
 
@@ -537,7 +544,8 @@ body {
   transform: translateY(50px);
   transition: opacity 1s, transform 1s;
 }
-.project-deployed-link{
+
+.project-deployed-link {
   /* text-decoration: none; */
   color: rgb(106, 189, 231);
 }
@@ -558,10 +566,72 @@ body {
   min-height: 100px;
 }
 
+
+/* waves */
+.ocean {
+  height: 180px; 
+  width: 100%;
+  position: absolute;
+  bottom: 1;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+
+.wave {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23003F7C'/%3E%3C/svg%3E");
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  animation: wave 7s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(2) {
+  bottom: 0;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.5;
+}
+
+.wave:nth-of-type(3) {
+  bottom: 0;
+  animation: wave 20s -1s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes wave {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(-25%);}
+    100% {transform: translateX(-50%);}
+}
+
 .rights {
   text-align: center;
-  margin-top: 150px;
+  position: absolute;  
+  margin-top: 40px;
+  margin-left: 33%;
+  
 }
+
+.gradient-text {
+  color: #fff; /* Fallback color */
+  background: linear-gradient(339deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -634,6 +704,7 @@ input[type="checkbox"]:checked+.slider:before {
 }
 
 
+
 /* Dark mode */
 body.dark-mode {
   background-color: rgb(30, 41, 59);
@@ -658,7 +729,7 @@ body.dark-mode {
 }
 
 .dark-mode #github-home {
-  color: #ffffff; 
+  color: #ffffff;
 
 }
 
@@ -721,135 +792,214 @@ body.dark-mode {
 
 /* Responsive styles */
 @media all and (min-width: 768px) and (max-width:1023px) {
-  .logo{
+  .logo {
     width: 30px;
     height: 50px;
   }
-  .switch{
+
+  .switch {
     margin-left: 60px;
     width: 70px;
     height: 25px;
   }
-  #nav-menu li a{
-    font-size:19px;
+
+  #nav-menu li a {
+    font-size: 19px;
     margin-right: 0px;
   }
 
-  .skills-card-container{
+  .skills-card-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-left: 25px;
   }
-  .skills-card{
+
+  .skills-card {
     width: 150px;
     height: 130px;
   }
-  .project-card-container{
+
+  .project-card-container {
     display: grid;
     margin-left: 10px;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-  .project-card{
+
+  .project-card {
     width: 300px;
   }
-  .github{
+
+  .github {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     justify-content: center;
   }
-  .github div:nth-child(2){
+
+  .github div:nth-child(2) {
     margin-left: 20px;
   }
-  .github div:nth-child(3){
+
+  .github div:nth-child(3) {
     margin-left: 100px;
     margin-top: 10px;
   }
+
+  .wave {
+    width: 250%;
+    height: 120%;
+    animation-duration: 8s;
+  }
+
+  .wave:nth-of-type(2) {
+    animation-duration: 14s;
+  }
+
+  .wave:nth-of-type(3) {
+    animation-duration: 16s;
+  }.wave {
+    width: 250%;
+    height: 120%;
+    animation-duration: 8s;
+  }
+
+  .wave:nth-of-type(2) {
+    animation-duration: 14s;
+  }
+
+  .wave:nth-of-type(3) {
+    animation-duration: 16s;
+  }
 }
+
 @media all and (min-width: 320px) and (max-width:767px) {
-  .logo{
+  .logo {
     width: 30px;
     height: 50px;
   }
-  .switch{
+
+  .switch {
     margin-left: 80px;
     width: 70px;
     height: 30px;
   }
-  .turnoff{
+
+  .turnoff {
     /* display: none; */
   }
-  #nav-menu li a{
-    font-size:18px;
+
+  #nav-menu li a {
+    font-size: 18px;
     margin-right: 0px;
   }
-  
 
-  .home-text{
+
+  .home-text {
     min-width: 400px;
     margin-left: 30px;
   }
-  .home-img{
+
+  .home-img {
     margin-left: 80px;
   }
-  .about-description{
+
+  .about-description {
     width: 700px;
     margin-left: 30px;
   }
-  .resume-buttons{
+
+  .resume-buttons {
     width: 750px;
     justify-content: center;
   }
 
-  #skills{
+  #skills {
     width: 767px;
   }
-  .skills-card-container{
+
+  .skills-card-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-left: 23px;
   }
-  .skills-card{
+
+  .skills-card {
     width: 150px;
     height: 130px;
   }
-  #projects{
+
+  #projects {
     width: 700px;
   }
-  .project-card-container{
+
+  .project-card-container {
     display: grid;
     margin-left: 10px;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-  .project-card{
+
+  .project-card {
     width: 300px;
   }
-  .section-title{
+
+  .section-title {
     width: 750px;
     text-align: center;
   }
-  .github{
+
+  .github {
     width: 700px;
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     justify-content: center;
   }
-  .github div:nth-child(1){
+
+  .github div:nth-child(1) {
     margin-left: 50px;
   }
-  .github div:nth-child(2){
+
+  .github div:nth-child(2) {
     margin-left: 70px;
   }
-  .github div:nth-child(3){
+
+  .github div:nth-child(3) {
     margin-left: 140px;
     margin-top: 10px;
   }
-  #contact{
+
+  #contact {
     width: 767px;
   }
-  .emptyspace{
+
+  .emptyspace {
     width: 750px;
     text-align: center;
   }
+  
+  .ocean {
+    height: 120px;
+  }
+
+  .wave {
+    width: 300%;
+    height: 100%;
+    animation-duration: 6s;
+  }
+
+  .wave:nth-of-type(2) {
+    animation-duration: 12s;
+  }
+
+  .wave:nth-of-type(3) {
+    animation-duration: 14s;
+  }
+
+
+
 }
+
+
+
+
+
