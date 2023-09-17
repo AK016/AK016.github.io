@@ -307,3 +307,14 @@ else {
 }
 
 
+GitHubCalendar(".calendar", "AK016");
+
+    // or enable responsive functionality:
+    GitHubCalendar(".calendar", "AK016", { responsive: true });
+
+    // Use a proxy
+    GitHubCalendar(".calendar", "AK016", {
+       proxy (AK016) {
+         return fetch(`https://your-proxy.com/github?user=${AK016}`)
+       }
+    }).then(r => r.text())
