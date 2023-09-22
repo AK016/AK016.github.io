@@ -1,4 +1,8 @@
 /* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -87,6 +91,24 @@ body {
   /* border: 2px red solid; */
 }
 
+/* Add this CSS to your stylesheet */
+@keyframes riseUp {
+  0% {
+      transform: translateY(50px); /* Initial position */
+      opacity: 0; /* Initial opacity */
+  }
+  100% {
+      transform: translateY(0); /* Final position */
+      opacity: 1; /* Final opacity */
+  }
+}
+
+/* Apply the animation to the home content */
+.home-content {
+  animation: riseUp 1.5s ease-in-out; /* Adjust the animation duration and timing function as needed */
+}
+
+
 #resume-1 {
   text-decoration: none;
   background-color: rgb(220, 20, 60);
@@ -144,6 +166,7 @@ body {
   font-size: 34px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: rgb(36, 45, 73);
 }
 
 #user-detail-intro {
@@ -247,6 +270,9 @@ body {
   grid-gap: 20px;
 }
 
+
+
+
 .project-card {
   flex: 0 0 300px;
   padding: 20px;
@@ -262,7 +288,6 @@ body {
 
 .project-tech-stack {
   color: rgb(220, 20, 60);
-  ;
 }
 
 .techs {
@@ -356,6 +381,34 @@ body {
 .contact-list li a:hover {
   color: #666;
 }
+
+/* CSS for the swap animation */
+.swap-text-hidden {
+  display: none;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  animation: rollDice 3s linear infinite; /* Adjust the animation duration as needed */
+}
+
+.swap-text {
+  display: inline;
+}
+
+@keyframes rollDice {
+  0%, 100% {
+      transform: translateY(50%);
+      opacity: 0;
+  }
+  25%, 75% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+
+
 
 #resume {
   padding: 50px 0;
@@ -726,6 +779,10 @@ body.dark-mode {
 
 .dark-mode #nav-menu li a:hover {
   color: rgb(220, 20, 60);
+}
+
+.dark-mode #user-detail-name{
+  color: #fff;
 }
 
 .dark-mode #github-home {

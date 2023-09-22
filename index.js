@@ -1,81 +1,70 @@
 // Smooth scroll to section
 const navLinks = document.querySelectorAll('#nav-menu a:not(.resume-link)');
 
-// Add event listener to track scroll position
-window.addEventListener('scroll', function () {
-  const currentScroll = window.pageYOffset;
+// Function to add the "active" class to the navigation link of the currently active section
+function highlightActiveSection() {
+  const sections = document.querySelectorAll("section"); // Assuming your sections have a "section" tag
+  const navLinks = document.querySelectorAll('.nav-link:not(.resume)');
 
-  // Iterate through each section to determine the active section
-  document.querySelectorAll('section').forEach(section => {
-    const sectionTop = section.offsetTop - 70;
-    const sectionHeight = section.offsetHeight;
+  let currentActiveIndex = -1;
 
-    // Check if the current scroll position is within the bounds of the section
-    if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
-      // Remove the 'active' class from all navigation links
-      navLinks.forEach(link => link.classList.remove('active'));
+  sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) { // Adjust the 100 value as needed for your layout
+          currentActiveIndex = index;
+      }
+  });
 
-      // Get the corresponding navigation link using the section ID
-      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+  navLinks.forEach((link, index) => {
+      if (index === currentActiveIndex) {
+          link.classList.add("active");
+      } else {
+          link.classList.remove("active");
+      }
+  });
+}
 
-      // Add the 'active' class to the corresponding navigation link
-      targetNavLink.classList.add('active');
-    }
 
-    // Special case for the contact section
-    if (
-      currentScroll + window.innerHeight >= document.documentElement.scrollHeight &&
-      section.id === 'contact'
-    ) {
-      // Remove the 'active' class from all navigation links
-      navLinks.forEach(link => link.classList.remove('active'));
+// Call the main event handler when the page loads and when the user scrolls
+window.addEventListener("load", () => {
+  highlightActiveSection();
+});
 
-      // Get the corresponding navigation link using the section ID
-      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+window.addEventListener("scroll", () => {
+  highlightActiveSection();
+});
 
-      // Add the 'active' class to the corresponding navigation link
-      targetNavLink.classList.add('active');
-    }
+
+// Call the functions again after a delay in case the page content changes dynamically
+setInterval(() => {
+  highlightActiveSection();
+}, 1000); // Adjust the delay time (1000 milliseconds = 1 second) as needed
+
+
+// JavaScript to handle smooth scrolling for navigation links, excluding "Resume"
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll('.nav-link:not(.resume)');
+
+  navLinks.forEach((link) => {
+      link.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop - 50, // Adjust this value as needed for your layout
+                  behavior: 'smooth'
+              });
+          }
+
+          // Close the mobile menu if it's open
+          document.getElementById('nav-menu').classList.remove('active');
+      });
   });
 });
 
-
-// Smooth scroll function
-function smoothScroll(target, duration) {
-  const targetSection = document.querySelector(target);
-  const targetPosition = targetSection.getBoundingClientRect().top;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
-
-  function scrollAnimation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const scrollY = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, scrollY);
-    if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
-  }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(scrollAnimation);
-}
-
-// Navbar links smooth scroll
-navLinks.forEach(link => {
-  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetSection = link.getAttribute('href');
-      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-    });
-  }
-});
 
 
 
@@ -307,14 +296,14 @@ else {
 }
 
 
-GitHubCalendar(".calendar", "AK016");
+// GitHubCalendar(".calendar", "AK016");
 
-    // or enable responsive functionality:
-    GitHubCalendar(".calendar", "AK016", { responsive: true });
+//     // or enable responsive functionality:
+//     GitHubCalendar(".calendar", "AK016", { responsive: true });
 
-    // Use a proxy
-    GitHubCalendar(".calendar", "AK016", {
-       proxy (AK016) {
-         return fetch(`https://your-proxy.com/github?user=${AK016}`)
-       }
-    }).then(r => r.text())
+//     // Use a proxy
+//     GitHubCalendar(".calendar", "AK016", {
+//        proxy (AK016) {
+//          return fetch(`https://your-proxy.com/github?user=${AK016}`)
+//        }
+//     }).then(r => r.text())
