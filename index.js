@@ -3,14 +3,14 @@ const navLinks = document.querySelectorAll('#nav-menu a:not(.resume-link)');
 
 // Function to add the "active" class to the navigation link of the currently active section
 function highlightActiveSection() {
-  const sections = document.querySelectorAll("section"); // Assuming your sections have a "section" tag
+  const sections = document.querySelectorAll("section"); 
   const navLinks = document.querySelectorAll('.nav-link:not(.resume)');
 
   let currentActiveIndex = -1;
 
   sections.forEach((section, index) => {
       const rect = section.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom >= 100) { // Adjust the 100 value as needed for your layout
+      if (rect.top <= 100 && rect.bottom >= 100) { 
           currentActiveIndex = index;
       }
   });
@@ -240,24 +240,6 @@ function isElementInViewport(element) {
   );
 }
 
-// Function to handle the scroll event
-function handleScroll() {
-  var contactSection = document.getElementById('contact');
-  var contactLeft = document.querySelector('.contact-half.contact-left');
-  var contactRight = document.querySelector('.contact-half.contact-right');
-
-  if (isElementInViewport(contactSection)) {
-    contactLeft.classList.add('appear');
-    contactRight.classList.add('appear');
-  } else {
-    contactLeft.classList.remove('appear');
-    contactRight.classList.remove('appear');
-  }
-}
-
-// Event listener for scroll event
-window.addEventListener('scroll', handleScroll);
-
 
 
 
@@ -296,14 +278,6 @@ else {
 }
 
 
-// GitHubCalendar(".calendar", "AK016");
 
-//     // or enable responsive functionality:
-//     GitHubCalendar(".calendar", "AK016", { responsive: true });
 
-//     // Use a proxy
-//     GitHubCalendar(".calendar", "AK016", {
-//        proxy (AK016) {
-//          return fetch(`https://your-proxy.com/github?user=${AK016}`)
-//        }
-//     }).then(r => r.text())
+// contact section scroll animation 
