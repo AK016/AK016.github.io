@@ -620,8 +620,6 @@ button[type="submit"]:hover {
 .rights {
   text-align: center;
   margin-top: 40px;
-  margin-left: 33%;
-  
 }
 
 .gradient-text {
@@ -736,6 +734,10 @@ body.dark-mode {
 
 .dark-mode #nav-menu li a:hover {
   color: rgb(220, 20, 60);
+}
+
+.dark-mode .home-img{
+  background-color: white;
 }
 
 .dark-mode #user-detail-name{

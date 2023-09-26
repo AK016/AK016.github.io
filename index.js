@@ -279,5 +279,7 @@ else {
 
 
 
-
-// contact section scroll animation 
+let form=document.querySelector("#messageme");
+form.addEventListener("submit",function(){
+  location.href="index.html";
+})
