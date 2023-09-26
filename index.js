@@ -279,7 +279,7 @@ else {
 
 
 
-let form=document.querySelector("#messageme");
-form.addEventListener("submit",function(){
-  location.href="index.html";
-})
+// let form=document.querySelector("#messageme");
+// form.addEventListener("submit",function(){
+//   location.href="index.html";
+// })
