@@ -266,8 +266,10 @@ body {
 
 .project-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 330px);
   grid-gap: 20px;
+  margin: auto;
+  margin-left: -20px;
 }
 
 
