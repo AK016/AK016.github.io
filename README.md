@@ -23,7 +23,7 @@ Check out the live version of my portfolio website: [https://ak016.github.io/](h
 
 ## Usage
 
-1. Clone the repository: `git clone https://github.com/AK016/portfolio-website.git`
+1. Clone the repository: `git clone https://github.com/AK016/AK016.github.io.git
 2. Open the `index.html` file in your web browser.
 3. Explore the different sections of the portfolio website.
 4. Click on the navigation links to scroll to the corresponding sections.
