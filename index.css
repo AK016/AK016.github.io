@@ -13,6 +13,7 @@ body {
 
 
 /* Navbar styles */
+/* Navbar styles */
 #nav-menu {
   display: flex;
   justify-content: space-between;
@@ -22,7 +23,7 @@ body {
   left: 0;
   width: 100%;
   background-color: black;
-  color: black;
+  color: white;
   z-index: 1000;
 }
 
@@ -37,7 +38,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  /* justify-content: flex-end; */
+  align-items: center;
 }
 
 #nav-menu li {
@@ -59,7 +60,7 @@ body {
 
 #resume-button-1 {
   background-color: rgb(220, 20, 60);
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 15px;
 }
 
@@ -69,6 +70,23 @@ body {
   font-size: 21px;
   border: 2px solid rgb(220, 60, 80);
 }
+
+#nav-toggle-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+  outline: none;
+  color: white;
+  margin-right: 20px;
+}
+
+
+
+
+
 
 
 /* Sections styles */
@@ -94,18 +112,24 @@ body {
 /* Add this CSS to your stylesheet */
 @keyframes riseUp {
   0% {
-      transform: translateY(50px); /* Initial position */
-      opacity: 0; /* Initial opacity */
+    transform: translateY(50px);
+    /* Initial position */
+    opacity: 0;
+    /* Initial opacity */
   }
+
   100% {
-      transform: translateY(0); /* Final position */
-      opacity: 1; /* Final opacity */
+    transform: translateY(0);
+    /* Final position */
+    opacity: 1;
+    /* Final opacity */
   }
 }
 
 /* Apply the animation to the home content */
 .home-content {
-  animation: riseUp 1.5s ease-in-out; /* Adjust the animation duration and timing function as needed */
+  animation: riseUp 1.5s ease-in-out;
+  /* Adjust the animation duration and timing function as needed */
 }
 
 
@@ -174,6 +198,9 @@ body {
   color: #666;
 }
 
+
+
+
 .about-content {
   text-align: center;
 }
@@ -186,6 +213,7 @@ body {
   /* border: 2px solid red; */
 }
 
+/* Skills Section */
 #skills {
   padding: 50px 0;
   background-color: #f9f9f9;
@@ -198,7 +226,10 @@ body {
 
 .skills-card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Automatically adjust columns */
+  gap: 20px;
+  /* Add some gap between cards */
   justify-content: center;
   align-items: flex-start;
 }
@@ -209,15 +240,10 @@ body {
   background-color: gainsboro;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin: 10px;
-  width: 200px;
-  height: 140px;
   border-radius: 5%;
   opacity: 0;
-  /* Initial opacity to hide the cards */
   transform: translateX(50px);
-  /* Initial position outside the viewport */
   animation: slideInCard 0.5s forwards;
-  /* Animation to slide in the card */
 }
 
 .skills-card:hover {
@@ -242,50 +268,32 @@ body {
   }
 }
 
-.skills-card {
-  animation-duration: 0.5s;
-  /* Set the animation duration to match the delay */
-}
 
-.skills-card.animate {
-  animation: slideInCard 0.5s forwards;
-  /* Animation to slide in the card */
-}
-
-
-
+/* Projects Section */
 #projects {
   padding: 50px 0;
   background-color: #fff;
-}
-
-.project-carousel {
-  overflow: hidden;
-  position: relative;
+  margin-top: 2%;
 }
 
 .project-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 330px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
-  margin: auto;
-  margin-left: -20px;
+  justify-content: center;
 }
 
-
-
-
 .project-card {
-  flex: 0 0 300px;
   padding: 20px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-right: 20px;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .project-tech-stack {
@@ -299,52 +307,30 @@ body {
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
 }
 
 .project-image:hover {
-  margin-top: -5px;
-  transform: scale(1.15);
-  transition: transform 0.8s;
-}
-
-.project-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.project-control-btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 0;
+  transform: scale(1.05);
 }
 
 .deployed-links {
-  width: 90%;
-  font-size: 30px;
+  font-size: 24px;
   display: flex;
-  margin: auto;
   justify-content: space-between;
 }
 
-.project-control-btn:hover {
-  background-color: #555;
-}
+/* Responsive layout for screens smaller than 768px */
 
 .github {
-  width: 50%;
-  display: grid;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   margin: auto;
-  /* margin-left: 100px; */
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -611,12 +597,6 @@ button[type="submit"]:hover {
   transform: translateY(0);
 }
 
-.github div:nth-child(3) {
-  /* margin-left: 1000px; */
-  margin-top: 50px;
-  margin-left: 70%;
-}
-
 
 
 .rights {
@@ -625,9 +605,11 @@ button[type="submit"]:hover {
 }
 
 .gradient-text {
-  color: #fff; /* Fallback color */
+  color: #fff;
+  /* Fallback color */
   background: linear-gradient(339deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-  -webkit-background-clip: text; /* For Safari/Chrome */
+  -webkit-background-clip: text;
+  /* For Safari/Chrome */
   background-clip: text;
   color: transparent;
 }
@@ -650,9 +632,8 @@ button[type="submit"]:hover {
 .switch {
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 30px;
-  margin-top: 20px;
+  width: 60px;
+  height: 25px;
 }
 
 .switch input[type="checkbox"] {
@@ -677,10 +658,10 @@ button[type="submit"]:hover {
   content: "";
   position: absolute;
   top: 50%;
-  left: 6px;
+  left: 1px;
   transform: translate(0, -50%);
-  width: 31px;
-  height: 31px;
+  width: 26px;
+  height: 26px;
   background-color: #fff;
   border-radius: 50%;
   transition: transform 0.7s ease;
@@ -693,11 +674,11 @@ button[type="submit"]:hover {
 .switch input:checked+.slider:before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 57%;
+  left: 54%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   background-image: url("https://e7.pngegg.com/pngimages/638/909/png-clipart-kakashi-hatake-sasuke-uchiha-obito-uchiha-sharingan-naruto-naruto-manga-logo.png");
   background-size: cover;
   background-position: center;
@@ -738,11 +719,15 @@ body.dark-mode {
   color: rgb(220, 20, 60);
 }
 
-.dark-mode .home-img{
+.dark-mode #nav-toggle-button {
+  color: white;
+}
+
+.dark-mode .home-img {
   background-color: white;
 }
 
-.dark-mode #user-detail-name{
+.dark-mode #user-detail-name {
   color: #fff;
 }
 
@@ -796,191 +781,123 @@ body.dark-mode {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Responsive styles */
-@media all and (min-width: 768px) and (max-width:1023px) {
-  .logo {
-    width: 30px;
-    height: 50px;
+@media screen and (max-width: 770px) {
+  body {
+    overflow-x: hidden;
   }
 
-  .switch {
-    margin-left: 60px;
-    width: 70px;
-    height: 25px;
-  }
-
-  #nav-menu li a {
-    font-size: 19px;
-    margin-right: 0px;
-  }
-
-  .skills-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 25px;
-  }
-
-  .skills-card {
-    width: 150px;
-    height: 130px;
-  }
-
-  .project-card-container {
-    display: grid;
-    margin-left: 10px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card {
-    width: 300px;
-  }
-
-  .github {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .github div:nth-child(2) {
-    margin-left: 20px;
-  }
-
-  .github div:nth-child(3) {
-    margin-left: 100px;
-    margin-top: 10px;
-  }
-  .rights{
+  /* burgur Button styles */
+  #nav-toggle-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
     font-size: 24px;
-    margin-left: 0px;
-  }
-}
-
-
-
-
-/* mobile screen  */
-@media all and (min-width: 320px) and (max-width:767px) {
-  .logo {
-    width: 30px;
-    height: 50px;
+    outline: none;
   }
 
-  .switch {
-    margin-left: 80px;
-    width: 70px;
-    height: 30px;
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    z-index: 1000;
+    width: 100%;
   }
 
-  .turnoff {
-    /* display: none; */
+  #nav-links.active {
+    display: flex;
+    width: 100%;
   }
 
-  #nav-menu li a {
-    font-size: 18px;
-    margin-right: 0px;
-  }
-
-
-  .home-text {
-    min-width: 400px;
-    margin-left: 30px;
-  }
-
-  .home-img {
-    margin-left: 80px;
-  }
-
-  .about-description {
-    width: 700px;
-    margin-left: 30px;
-  }
-
-  .resume-buttons {
-    width: 750px;
-    justify-content: center;
-  }
-
-  #skills {
-    width: 767px;
-  }
-
-  .skills-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 23px;
-  }
-
-  .skills-card {
-    width: 150px;
-    height: 130px;
-  }
-
-  #projects {
-    width: 700px;
-  }
-
-  .project-card-container {
-    display: grid;
-    margin-left: 10px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card {
-    width: 300px;
-  }
-
-  .section-title {
-    width: 750px;
+  #nav-links li {
+    margin: 15px 0;
     text-align: center;
   }
 
-  .github {
-    width: 700px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+  #nav-links a {
+    padding: 10px;
+  }
+
+  .skills-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    /* Adjust column width */
+  }
+
+  .skills-card {
+    width: 140px;
+    /* Adjust card width */
+    height: auto;
+    /* Allow cards to expand vertically */
+  }
+
+  .project-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .home-text {
+    margin-bottom: 20px;
+  }
+
+  .social {
+    margin-top: 20px;
+    margin-left: 0;
     justify-content: center;
   }
 
-  .github div:nth-child(1) {
-    margin-left: 50px;
+  .social a {
+    font-size: 24px;
+    margin: 0 10px;
   }
 
-  .github div:nth-child(2) {
-    margin-left: 70px;
+  .home-img {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0;
   }
 
-  .github div:nth-child(3) {
-    margin-left: 140px;
-    margin-top: 10px;
+  #user-detail-name {
+    font-size: 28px;
+    margin-bottom: 5px;
   }
 
-  #contact{
-    width: 760px;
+  #user-detail-intro {
+    font-size: 16px;
   }
-  
-  .rights{
-    width: 760px;
-    font-size: 22px;
-    margin-left: 0px;
-  }
-  
-
 }
 
 
 
+/* Further responsive adjustments for screens smaller than 480px */
+@media screen and (max-width: 480px) {
 
+  #nav-links{
+    width: 100%;
+  }
+
+  .job-title{
+    min-width: 450px;
+  }
+  .social{
+    display: flex;
+    margin: auto;
+  }
+  .social a{
+    font-size: 30px;
+  }
+
+  .project-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
