@@ -4,7 +4,7 @@ This repository contains the source code and assets for my personal portfolio we
 
 ## Live Demo
 
-Check out the live version of my portfolio website: [https://ak016.github.io/](https://ak016.github.io/)
+Check out the live version of my portfolio website: [AK](https://ak016.github.io/)
 
 ## Features
 
