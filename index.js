@@ -41,30 +41,21 @@ setInterval(() => {
 }, 1000); // Adjust the delay time (1000 milliseconds = 1 second) as needed
 
 
-// JavaScript to handle smooth scrolling for navigation links, excluding "Resume"
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll('.nav-link:not(.resume)');
+const toggleButton = document.getElementById('nav-toggle-button');
+const navList = document.getElementById('nav-links');
 
-  navLinks.forEach((link) => {
-      link.addEventListener('click', function (event) {
-          event.preventDefault();
+// Function to toggle the 'active' class for the nav-list
+function toggleNavMenu() {
+    navList.classList.toggle('active');
+}
 
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
+// Add a click event listener to the nav-toggle-button to toggle the menu
+toggleButton.addEventListener('click', toggleNavMenu);
 
-          if (targetElement) {
-              window.scrollTo({
-                  top: targetElement.offsetTop - 50, // Adjust this value as needed for your layout
-                  behavior: 'smooth'
-              });
-          }
-
-          // Close the mobile menu if it's open
-          document.getElementById('nav-menu').classList.remove('active');
-      });
-  });
+// Add click event listeners to each menu link to close the menu when clicked
+navLinks.forEach((link) => {
+    link.addEventListener('click', toggleNavMenu);
 });
-
 
 
 
@@ -126,8 +117,6 @@ window.addEventListener('load', function () {
   const logo = document.querySelector('.logo');
   logo.classList.add('visible');
 });
-
-
 
 
 
@@ -240,6 +229,13 @@ function isElementInViewport(element) {
   );
 }
 
+// Function to handle the scroll event
+function handleScroll() {
+}
+
+// Event listener for scroll event
+window.addEventListener('scroll', handleScroll);
+
 
 
 
@@ -278,8 +274,16 @@ else {
 }
 
 
+// Burger menu toggle 
+$(document).ready(function() {
+  // Function to toggle the navigation menu on mobile screens
+  $('#nav-toggle-button').click(function() {
+      $('#nav-links').slideToggle();
+  });
 
-let form=document.querySelector("#messageme");
-form.addEventListener("submit",function(){
-  location.href="index.html";
-})
+  // Function to close the navigation menu when a link is clicked
+  $('#nav-links a').click(function() {
+      $('#nav-links').slideUp();
+  });
+});
+
