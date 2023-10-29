@@ -910,7 +910,7 @@ body.dark-mode {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 
-  .container {
+  .github {
     flex-direction: column;
     align-items: center;
   }
