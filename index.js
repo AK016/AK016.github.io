@@ -57,6 +57,7 @@ navLinks.forEach((link) => {
     link.addEventListener('click', toggleNavMenu);
 });
 
+toggleNavMenu();
 
 
 const jobTitleElement = document.getElementById('job-title');

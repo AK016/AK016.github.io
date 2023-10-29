@@ -324,13 +324,27 @@ body {
 
 /* Responsive layout for screens smaller than 768px */
 
-.github {
+/* .github {
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   margin: auto;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+} */
+
+.github {
+  display: flex;
+  justify-content: space-around;
+}
+
+.github a {
+  text-align: center;
+}
+
+.github img {
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -787,7 +801,6 @@ body.dark-mode {
     overflow-x: hidden;
   }
 
-  /* burgur Button styles */
   #nav-toggle-button {
     display: block;
     background-color: transparent;
@@ -825,14 +838,11 @@ body.dark-mode {
 
   .skills-card-container {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    /* Adjust column width */
   }
 
   .skills-card {
     width: 140px;
-    /* Adjust card width */
     height: auto;
-    /* Allow cards to expand vertically */
   }
 
   .project-card-container {
@@ -882,22 +892,20 @@ body.dark-mode {
 /* Further responsive adjustments for screens smaller than 480px */
 @media screen and (max-width: 480px) {
 
-  #nav-links{
+  #nav-menu {
     width: 100%;
-  }
-
-  .job-title{
-    min-width: 450px;
-  }
-  .social{
-    display: flex;
-    margin: auto;
-  }
-  .social a{
-    font-size: 30px;
   }
 
   .project-card-container {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rights{
+    font-size: 19px;
   }
 }
