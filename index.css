@@ -896,6 +896,12 @@ body.dark-mode {
     width: 100%;
   }
 
+  .social{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+
   .skills-card-container {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     /* margin-left: -20px; */
