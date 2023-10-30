@@ -288,3 +288,15 @@ $(document).ready(function() {
   });
 });
 
+
+// Adjust navList display on window resize
+let isSmallScreen = window.innerWidth < 953;
+
+window.addEventListener('resize', () => {
+  const isNowSmallScreen = window.innerWidth < 953;
+  if (!toggleButton.checked) {
+    navList.style.display = isNowSmallScreen ? 'none' : 'block';
+  }
+  isSmallScreen = isNowSmallScreen;
+});
+
