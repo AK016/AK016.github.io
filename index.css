@@ -896,6 +896,31 @@ body.dark-mode {
     width: 100%;
   }
 
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  #nav-links.active {
+    display: flex;
+    width: 100%;
+  }
+
+  #nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  #nav-links a {
+    padding: 10px;
+  }
+
   .social{
     display: flex;
     margin: auto;

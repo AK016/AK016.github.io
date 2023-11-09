@@ -57,7 +57,6 @@ navLinks.forEach((link) => {
     link.addEventListener('click', toggleNavMenu);
 });
 
-// toggleNavMenu();
 
 
 const jobTitleElement = document.getElementById('job-title');
@@ -289,13 +288,18 @@ $(document).ready(function() {
 });
 
 
-// Adjust navList display on window resize
-let isSmallScreen = window.innerWidth < 953;
-
-window.addEventListener('resize', () => {
-  const isNowSmallScreen = window.innerWidth < 953;
-  if (!toggleButton.checked) {
-    navList.style.display = isNowSmallScreen ? 'none' : 'block';
+// Function to handle screen size changes
+function handleScreenSizeChange() {
+  if (window.innerWidth > 770) {
+    navList.classList.remove('active'); // Close the burger menu
+    navList.style.display = 'flex'; // Display links in a row
+  } else {
+    navList.style.display = 'none'; // Hide the navigation links on small screens
   }
-  isSmallScreen = isNowSmallScreen;
-});
+}
+
+// Add an event listener to handle screen size changes
+window.addEventListener('resize', handleScreenSizeChange);
+
+// Initial call to handle screen size on page load
+handleScreenSizeChange();
