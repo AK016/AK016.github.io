@@ -276,16 +276,45 @@ else {
 
 // Burger menu toggle 
 $(document).ready(function() {
+  var windowWidth = window.innerWidth;
+  var navLinks = $('#nav-links');
+
   // Function to toggle the navigation menu on mobile screens
   $('#nav-toggle-button').click(function() {
-      $('#nav-links').slideToggle();
+    if (windowWidth <= 770) {
+      navLinks.slideToggle();
+    }
   });
 
   // Function to close the navigation menu when a link is clicked
   $('#nav-links a').click(function() {
-      $('#nav-links').slideUp();
+    if (windowWidth <= 770) {
+      navLinks.slideUp();
+    }
   });
+
+  // Add an event listener to handle screen size changes
+  $(window).resize(function() {
+    windowWidth = window.innerWidth;
+
+    // Show or hide the navigation links based on screen size
+    handleScreenSizeChange();
+  });
+
+  // Initial call to handle screen size on page load
+  handleScreenSizeChange();
+
+  // Function to handle screen size changes
+  function handleScreenSizeChange() {
+    // Show or hide the navigation links based on screen size
+    if (windowWidth > 770) {
+      navLinks.show();
+    } else {
+      navLinks.hide();
+    }
+  }
 });
+
 
 
 // Function to handle screen size changes
