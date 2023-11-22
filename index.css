@@ -307,7 +307,8 @@ body {
 
 .project-image {
   width: 100%;
-  height: auto;
+  min-height: 250px;
+  max-height: 250px;
   border-radius: 10px;
 }
 
