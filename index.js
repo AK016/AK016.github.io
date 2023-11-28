@@ -1,6 +1,7 @@
 // Smooth scroll to section
 const navLinks = document.querySelectorAll('#nav-menu a:not(.resume-link)');
 
+
 // Function to add the "active" class to the navigation link of the currently active section
 function highlightActiveSection() {
   const sections = document.querySelectorAll("section"); 

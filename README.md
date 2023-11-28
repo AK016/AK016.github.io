@@ -5,6 +5,9 @@ This repository contains the source code and assets for my personal portfolio we
 ## Live Demo
 
 Check out the live version of my portfolio website: [AK](https://ak016.github.io/)
+![Demo](https://github.com/AK016/AK016.github.io/assets/123861375/e0f6d4fd-cfa6-4e8b-9d1d-1a38424118cd)
+
+
 
 ## Features
 
@@ -40,4 +43,3 @@ If you have any questions or feedback, feel free to reach out to me:
 - Email: akshaykadam9010@gmail.com
 - LinkedIn: https://www.linkedin.com/in/akshay-kadam-8444b81ab/
 - Phone: +91 9686315358
-
