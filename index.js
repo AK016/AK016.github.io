@@ -57,7 +57,6 @@ navLinks.forEach((link) => {
     link.addEventListener('click', toggleNavMenu);
 });
 
-toggleNavMenu();
 
 
 const jobTitleElement = document.getElementById('job-title');
@@ -277,25 +276,59 @@ else {
 
 // Burger menu toggle 
 $(document).ready(function() {
+  var windowWidth = window.innerWidth;
+  var navLinks = $('#nav-links');
+
   // Function to toggle the navigation menu on mobile screens
   $('#nav-toggle-button').click(function() {
-      $('#nav-links').slideToggle();
+    if (windowWidth <= 770) {
+      navLinks.slideToggle();
+    }
   });
 
   // Function to close the navigation menu when a link is clicked
   $('#nav-links a').click(function() {
-      $('#nav-links').slideUp();
+    if (windowWidth <= 770) {
+      navLinks.slideUp();
+    }
   });
-});
 
+  // Add an event listener to handle screen size changes
+  $(window).resize(function() {
+    windowWidth = window.innerWidth;
 
-// Adjust navList display on window resize
-let isSmallScreen = window.innerWidth < 953;
+    // Show or hide the navigation links based on screen size
+    handleScreenSizeChange();
+  });
 
-window.addEventListener('resize', () => {
-  const isNowSmallScreen = window.innerWidth < 953;
-  if (!toggleButton.checked) {
-    navList.style.display = isNowSmallScreen ? 'none' : 'block';
+  // Initial call to handle screen size on page load
+  handleScreenSizeChange();
+
+  // Function to handle screen size changes
+  function handleScreenSizeChange() {
+    // Show or hide the navigation links based on screen size
+    if (windowWidth > 770) {
+      navLinks.show();
+    } else {
+      navLinks.hide();
+    }
   }
-  isSmallScreen = isNowSmallScreen;
 });
+
+
+
+// Function to handle screen size changes
+function handleScreenSizeChange() {
+  if (window.innerWidth > 770) {
+    navList.classList.remove('active'); // Close the burger menu
+    navList.style.display = 'flex'; // Display links in a row
+  } else {
+    navList.style.display = 'none'; // Hide the navigation links on small screens
+  }
+}
+
+// Add an event listener to handle screen size changes
+window.addEventListener('resize', handleScreenSizeChange);
+
+// Initial call to handle screen size on page load
+handleScreenSizeChange();
